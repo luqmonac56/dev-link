@@ -45,9 +45,9 @@ const Links = () => {
       const querySnapshot = await getDocs(collection(db, "items"));
       console.log();
       
-      setItems(
-        querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-      );
+      // setItems(
+      //   // querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+      // );
     };
   });
 
