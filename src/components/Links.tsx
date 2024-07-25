@@ -103,7 +103,7 @@ const Links = () => {
         </div>
 
         <section>
-          {
+          { !items &&
             <div className="bg-[#FAFAFA] mt-6 pt-8 pb-6 mb-4">
               <Image
                 className="w-60 h-40 mx-auto my-0"
@@ -120,7 +120,7 @@ const Links = () => {
               </p>
             </div>
           }
-          <div className="bg-[#FAFAFA] px-3 py-4 rounded-xl">
+          {items && <div className="bg-[#FAFAFA] px-3 py-4 rounded-xl">
             <div className="flex items-center justify-between mb-4">
               <span className="flex text-[#737373] font-bold items-center gap-2">
                 <Image className="" src={linkmenu} alt="linkmenu" />
@@ -146,7 +146,7 @@ const Links = () => {
                 />
               </div>
             </div>
-          </div>
+          </div>}
         </section>
 
         <div className="absolute bottom-2 w-[90%]">
