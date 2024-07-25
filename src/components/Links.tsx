@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { SelectDemo } from "@/components/SelectDemo";
+// import { SelectDemo } from "@/components/SelectDemo";
 import getstarted from "@/../public/images/getstarted.png";
 import empty from "@/../public/images/empty.png";
 import linkicon from "@/../public/images/link.png";
