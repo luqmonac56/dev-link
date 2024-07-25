@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/../public/images/logo.png";
@@ -7,7 +6,16 @@ import link from "@/../public/images/link.png";
 import profile from "@/../public/images/profile.png";
 import getstarted from "@/../public/images/getstarted.png";
 
-const Navbar = () => {
+interface NavbarProps {
+  onHandleDisplayLinks: () => void;
+  onHandleDisplayprofile: () => void;
+  bgColor1: string;
+  bgColor2: string;
+}
+
+const Navbar = (props: NavbarProps) => {
+  const { onHandleDisplayLinks, onHandleDisplayprofile, bgColor1, bgColor2 } = props;
+
   return (
     <nav className="flex justify-between px-8 py-4  items-center w-full mb-4 mx-auto md:w-[90%] rounded    max-w-[1390px] bg-white font-semibold">
       <Link href="/main">
@@ -17,18 +25,22 @@ const Navbar = () => {
         </div>
       </Link>
       <div className="flex  items-center gap-8">
-        <Link href="/links">
-          <button className="flex justify-center items-center gap-2">
-            <Image src={link} alt="logo" />
-            <span className="md:block hidden">Links</span>
-          </button>
-        </Link>
-        <Link href="/">
-          <button className="flex justify-center items-center gap-2">
-            <Image src={profile} alt="logo" />
-            <span className="md:block hidden">Profile Details</span>
-          </button>
-        </Link>
+        <button
+          style={{ background: bgColor1 }}
+          onClick={onHandleDisplayLinks}
+          className="flex px-7 py-3 rounded-[8px] justify-center items-center gap-2"
+        >
+          <Image src={link} alt="logo" />
+          <span className="md:block hidden">Links</span>
+        </button>
+        <button
+          style={{ background: bgColor2 }}
+          onClick={onHandleDisplayprofile}
+          className="flex justify-center px-7 py-3 rounded-[8px] items-center gap-2"
+        >
+          <Image src={profile} alt="logo" />
+          <span className="md:block hidden">Profile Details</span>
+        </button>
       </div>
       <Link href="/preview">
         <button className="border-purple ">

@@ -10,14 +10,25 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export function SelectDemo() {
+interface SelectProps {
+  // handleChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  handleChange: (value: string) => void;
+  platform: string;
+}
+
+export function SelectDemo(props: SelectProps) {
+  const { handleChange, platform } = props;
+
+  const onChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    handleChange(event.target.value);
+  };
+  
   return (
-    <Select>
+    <Select value={platform} onValueChange={onChange}>
       <label htmlFor="" className="mb-2">
         Platform
       </label>
-      {/* <SelectLabel>Platform</SelectLabel> */}
-      <SelectTrigger className="focus: active:border-red-500 focus:border-blue-500 outline-none focus:ring-0">
+      <SelectTrigger className="focus outline-none focus:ring-0">
         <SelectValue placeholder="" />
       </SelectTrigger>
       <SelectContent>

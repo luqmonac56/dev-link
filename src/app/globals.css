@@ -75,3 +75,22 @@
 .profile-picture {
   box-shadow: inset 0 0 0 5px #633cff; /* Adjust color and width */
 }
+
+/* Basic styling for the select element */
+#platforms {
+  padding: 8px;
+  border-radius: 4px;
+  appearance: none; /* Remove default styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /* background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="none" stroke="gray" stroke-width=".5" d="M2 0L0 2h4z"/></svg>') no-repeat right 8px center; */
+  /* background-color: white; */
+  /* background-size: 8px 10px; */
+}
+
+/* Style the dropdown options */
+#platforms option {
+  padding: 8px;
+  border-bottom: 1px solid black;
+}
+
